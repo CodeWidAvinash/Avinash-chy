@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>For Rasgulla 💖</title>
+
+<style>
+body {
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+  font-family: 'Poppins', sans-serif;
+}
+
+.card {
+  background: rgba(255,255,255,0.25);
+  backdrop-filter: blur(12px);
+  padding: 25px;
+  border-radius: 18px;
+  text-align: center;
+  width: 300px;
+  color: #fff;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+h2 {
+  margin-bottom: 10px;
+}
+
+.buttons {
+  margin-top: 15px;
+  position: relative;
+  height: 60px;
+}
+
+button {
+  border: none;
+  padding: 10px 20px;
+  border-radius: 25px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+#yesBtn {
+  background: #ff4d6d;
+  color: white;
+}
+
+#noBtn {
+  background: #ddd;
+  position: absolute;
+}
+
+.note {
+  display: none;
+  margin-top: 15px;
+  font-size: 14px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="card" id="card">
+  <h2>Hey Rasgulla 💕</h2>
+  <p>Will you be my Valentine? 🌹</p>
+
+  <div class="buttons">
+    <button id="yesBtn">Yes ✨</button>
+    <button id="noBtn">No 🙈</button>
+  </div>
+
+  <div class="note" id="note">
+    💖 You just made my heart smile 💖<br><br>
+    From today, every heartbeat of mine whispers your name.<br>
+    Thank you for being my Valentine ✨<br><br>
+    — With love, <b>Avinash Choudhary ❤️</b>
+  </div>
+</div>
+
+<!-- Romantic music -->
+<audio id="bgMusic" loop>
+  <source src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_6b61b7a2c3.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+const noBtn = document.getElementById("noBtn");
+const yesBtn = document.getElementById("yesBtn");
+const note = document.getElementById("note");
+const music = document.getElementById("bgMusic");
+
+// No button runs away endlessly
+noBtn.addEventListener("mouseenter", () => {
+  const x = Math.random() * 200 - 100;
+  const y = Math.random() * 200 - 50;
+  noBtn.style.transform = `translate(${x}px, ${y}px)`;
+});
+
+// Yes button
+yesBtn.addEventListener("click", () => {
+  note.style.display = "block";
+  music.play();
+});
+</script>
+
+</body>
+</html>
